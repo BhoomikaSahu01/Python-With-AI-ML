@@ -1,4 +1,4 @@
-import pandas as pd
+'''import pandas as pd
 
 data = {
     'Name': ['harshi','isha','bhoomika','harshika'],
@@ -35,4 +35,41 @@ print(df['Grade'])
 print('---------------')
 print(df)
 
+# GroupBY - like excel pivot
+city_avg = df.groupby('city')['Marks'].mean()
+print(city_avg)
+
+print(df.groupby('city')['Marks'].mean())
+
+df.groupby('city')['Marks'].mean()
+
+#Read real CSV file
+df2 = pd.read_csv('students.csv')
+print(df2)
+# cleaning
+df2['Name'] = df2['Name'].str.strip()
+print(df2)
+df2['Marks'] = df2['Marks'].str.replace('#', '')
+df2['City'] = df2['City'].str.replace('__', '')
+print(df)
+df2.to_csv('clean_output.csv', index=False) #save'''
+
+# Matplotlib
+
+import matplotlib .pyplot as plt
+import numpy as np
+
+months = ['jan', 'Feb', 'Mar', 'Apr', 'May', 'jun', 'jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+sales = [45,52,48,61,58,72,69,75,68,82,90,95]
+
+# line chart
+plt.figure(figsize=(12,5))
+plt.plot(months,sales,marker='o',color='steelblue',linewidth=2,markersize=8)
+plt.fill_between(months, sales, alpha=0.15, color='steelblue')
+plt.title('Monthly Sales 2024 (Rs. Thousands)', fontsize=14, fontweight='bold')
+plt.xlabel('Month')
+plt.ylabel('Sales (Rs. K)')
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
 
