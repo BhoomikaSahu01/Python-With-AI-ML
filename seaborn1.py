@@ -13,7 +13,24 @@ df = pd.DataFrame({
     'gender':   np.random.choice(['Male', 'Female'],100)})
 
 #histogram with kde - see the distribution
-plt.figure(figsize=(10,4))
-sns.histplot(df['marks'],bins=20,kde=True, color='steelblue')
-plt.title('Distribution of student Marks')
-plt.show()
+# plt.figure(figsize=(10,4))
+# sns.histplot(df['marks'],bins=20,kde=True, color='steelblue')
+# plt.title('Distribution of student Marks')
+# plt.show()
+
+'''box plot
+sns.boxplot(data = df ,x = 'city', y='marks', palette='Set2')
+plt.title('Marks distribution by city')
+plt.show()'''
+
+'''heatmap (coleration)
+plt.figure(figsize=(5,4))
+sns.heatmap(df[['marks', 'study_hours']].corr(),annot=True,cmap ='coolwarm', vmin=-1,vmax=1)
+plt.title('correlation Matrix')
+plt.show()'''
+
+'''pair plot all relation at once
+sns.pairplot(df[['marks', 'study_hours']],diag_kind='kde')
+plt.show()'''
+
+''''''
